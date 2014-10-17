@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Roguelike</name>
+    <description>an awesome roguelike</description>
+    <version>1.0</version>
+    <author>Luiz &quot;Bills&quot;</author>
+    <author-email>luizpbills@gmail.com</author-email>
+    <author-website>https://github.com/luizbills/c2-roguelike</author-website>
+    <app-id>com.luizbills.roguelike</app-id>
+    <unique-id>3k8y8jenijj4j</unique-id>
+    <saved-with-version>18400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>320</width>
+        <height>320</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Downscaling">High quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Mouse" sid="2819417045313147">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="3896291107124578">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Player" sid="2315453258549076">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="current hit points" name="hp" sid="7991938533167831" type="number" />
+                <instance-variable comment="maximum hit points" name="max_hp" sid="2910083678081033" type="number" />
+                <instance-variable comment="posição X no mapa" name="position_x" sid="4930722547997282" type="number" />
+                <instance-variable comment="posição Y no mapa" name="position_y" sid="2182882745960913" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="9511271395428622">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="8630662146515371">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8680859985620229" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-mon\unique\francis.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\player\base\halfling_m.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.84375" y="0.5" />
+                            <point x="0.65625" y="0.65625" />
+                            <point x="0.5" y="0.71875" />
+                            <point x="0.34375" y="0.65625" />
+                            <point x="0.15625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="290742087268881">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Monsters" sid="461491848821023">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9108452394825266" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\player\transform\pig_form.png">
+                        <collision-poly>
+                            <point x="0.28125" y="0.28125" />
+                            <point x="0.5" y="0.25" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.8125" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="0.9375" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array_Map_Floor" sid="1157229544396666">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Tile_Floor" sid="6662262137838609">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="8910388757669541" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\floor\sandstone_floor3.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\floor\sandstone_floor6.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\floor\sandstone_floor7.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\floor\sandstone_floor8.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="9289146760633287">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Tile_Wall" sid="4917647241384067">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="836620607209107" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\wall\stone2_brown0.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\wall\stone2_brown1.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\wall\stone2_brown2.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\LUIZ\Documents\Game Assets\Images\crawl-tiles Oct-5-2010\dc-dngn\wall\stone2_brown3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Dungeon.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="16" />
+        <global-instance type="Keyboard" uid="17" />
+        <global-instance type="Function" uid="0" />
+        <global-instance type="Browser" uid="5" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

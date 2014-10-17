@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable comment="Verifica se está no turno do Jogador" constant="0" name="is_player_turn" sid="9640502305071139" static="0" type="number">1</variable>
+        <variable comment="Numeros Atual de Turnos" constant="0" name="game_time" sid="6709344955752999" static="0" type="number">0</variable>
+        <variable comment="usado para alguns calculos" constant="1" name="PIXEL_SCALE" sid="3832626169944307" static="0" type="number">32</variable>
+        <event-block sid="1942111301961046">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9714797784982228" type="System">
+                    <param id="0" name="Variable">is_player_turn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="13475047004247">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="300291405028167" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="549019984332515" type="Function">
+                            <param id="0" name="Name">&quot;MoveTo&quot;</param>
+                            <param id="1" name="Parameter {n}">1{###}0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9452965348960073">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4290301312046087" type="System" />
+                        <condition id="2" name="Key is down" sid="3267087425019251" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2131828090121704" type="Function">
+                            <param id="0" name="Name">&quot;MoveTo&quot;</param>
+                            <param id="1" name="Parameter {n}">-1{###}0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3881169214009868">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="969426790932617" type="System" />
+                        <condition id="2" name="Key is down" sid="4308281745507416" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4656620288826862" type="Function">
+                            <param id="0" name="Name">&quot;MoveTo&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="56421762380583">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3116896792293148" type="System" />
+                        <condition id="2" name="Key is down" sid="7806670254333122" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2707273879526446" type="Function">
+                            <param id="0" name="Name">&quot;MoveTo&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="440906217322887">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2628172102762039" type="System">
+                            <param id="0" name="Variable">is_player_turn</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="6850183375625128" type="System">
+                            <param id="0" name="Seconds">0.25</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="870691027505289" type="System">
+                            <param id="0" name="Variable">is_player_turn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1047026017883329" type="System">
+                            <param id="0" name="Variable">game_time</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7664054513876002">
+            <conditions>
+                <condition id="0" name="On function" sid="9776920182149003" type="Function">
+                    <param id="0" name="Name">&quot;MoveTo&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="direction_x" sid="1105081815932073" static="0" type="number">0</variable>
+                <variable constant="0" name="direction_y" sid="7079985012905884" static="0" type="number">0</variable>
+                <variable constant="0" name="can_walk" sid="1098162615770678" static="0" type="number">0</variable>
+                <event-block sid="7704972606489022">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="3935941687932897" type="System">
+                            <param id="0" name="Variable">direction_x</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7253163508343271" type="System">
+                            <param id="0" name="Variable">direction_y</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="7202760960414032" type="Function">
+                            <param id="0" name="Name">&quot;IsWalkable&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.position_x + direction_x{###}Player.position_y + direction_y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3542355351609535" type="System">
+                            <param id="0" name="Variable">can_walk</param>
+                            <param id="1" name="Value">Function.ReturnValue</param>
+                        </action>
+                        <action disabled="1" id="14" name="Log" sid="8917824783460082" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">Function.ReturnValue</param>
+                        </action>
+                        <action disabled="1" id="14" name="Log" sid="5078218295585124" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;dir: &quot; &amp; direction_x &amp; &quot; &quot; &amp; direction_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9596870614235635">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8790216228555005" type="System">
+                            <param id="0" name="First value">can_walk</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="5845166789013863" type="Player">
+                            <param id="0" name="X">Player.X + PIXEL_SCALE * direction_x</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="2162991547084451" type="Player">
+                            <param id="0" name="Y">Player.Y + PIXEL_SCALE * direction_y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="670612761231324" type="Player">
+                            <param id="0" name="Instance variable">position_x</param>
+                            <param id="1" name="Value">Player.position_x + direction_x</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7604357123333049" type="Player">
+                            <param id="0" name="Instance variable">position_y</param>
+                            <param id="1" name="Value">Player.position_y + direction_y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1221644876520251" type="System">
+                            <param id="0" name="Variable">is_player_turn</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action disabled="1" id="14" name="Log" sid="8739265321870418" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;pos: &quot; &amp; Player.position_x &amp; &quot; &quot; &amp; Player.position_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8843794862240545">
+            <conditions>
+                <condition id="0" name="On function" sid="5301185182766127" type="Function">
+                    <param id="0" name="Name">&quot;IsWalkable&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="location_x" sid="8807860455722672" static="0" type="number">0</variable>
+                <variable constant="0" name="location_y" sid="3755974873440354" static="0" type="number">0</variable>
+                <variable constant="0" name="result" sid="265168586843613" static="0" type="number">0</variable>
+                <event-block sid="1022328784999847">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="6913777772235648" type="System">
+                            <param id="0" name="Variable">location_x</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1773858495089247" type="System">
+                            <param id="0" name="Variable">location_y</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3178839394390457">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="9965664585899009" type="Array_Map_Floor">
+                                    <param id="0" name="X">location_x</param>
+                                    <param id="1" name="Y">location_y</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3338311000743389" type="System">
+                                    <param id="0" name="Variable">result</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="994746453867449">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set return value" sid="4484649265559313" type="Function">
+                                    <param id="0" name="Value">result</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7671152798588136">
+            <conditions>
+                <condition id="0" name="On function" sid="9487935399119892" type="Function">
+                    <param id="0" name="Name">&quot;GenerateMap&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6246271578050507">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Clear" sid="3910077176233865" type="Array_Map_Floor" />
+                    </actions>
+                </event-block>
+                <event-block sid="4223604384900583">
+                    <conditions>
+                        <condition id="-10" name="For" sid="7095808366834161" type="System">
+                            <param id="0" name="Name">&quot;x&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">9</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="x" sid="8636521906525926" static="0" type="number">0</variable>
+                        <variable constant="0" name="y" sid="7572660477425408" static="0" type="number">0</variable>
+                        <variable constant="0" name="is_wall" sid="5501078356902187" static="0" type="number">0</variable>
+                        <event-block sid="8079783538433824">
+                            <conditions>
+                                <condition id="-10" name="For" sid="5036010937976018" type="System">
+                                    <param id="0" name="Name">&quot;y&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7110113128680753" type="System">
+                                    <param id="0" name="Variable">x</param>
+                                    <param id="1" name="Value">loopindex(&quot;x&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8399861100357331" type="System">
+                                    <param id="0" name="Variable">y</param>
+                                    <param id="1" name="Value">loopindex(&quot;y&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3005371762086281" type="System">
+                                    <param id="0" name="Variable">is_wall</param>
+                                    <param id="1" name="Value">random(0,1)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Valores da Array_Map_Floor: 0 =&gt; floor, 1 =&gt; wall, 2 =&gt; water</comment>
+                                <event-block sid="2265675693683338">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8379119078631323" type="System">
+                                            <param id="0" name="Variable">is_wall</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1658186994499643" type="System">
+                                            <param id="0" name="Object to create">Tile_Wall</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">x * PIXEL_SCALE</param>
+                                            <param id="3" name="Y">y * PIXEL_SCALE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="262263251081205" type="Tile_Wall">
+                                            <param id="0" name="Frame number">floor(random(0,4))</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="8772769585306786" type="Array_Map_Floor">
+                                            <param id="0" name="X">x</param>
+                                            <param id="1" name="Y">y</param>
+                                            <param id="2" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9951538195628145">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="3027482222743612" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="3226484388611822" type="System">
+                                            <param id="0" name="Object to create">Tile_Floor</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">x * PIXEL_SCALE</param>
+                                            <param id="3" name="Y">y * PIXEL_SCALE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="9654366197584944" type="Tile_Floor">
+                                            <param id="0" name="Frame number">floor(random(0,4))</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="2490243547378243" type="Array_Map_Floor">
+                                            <param id="0" name="X">x</param>
+                                            <param id="1" name="Y">y</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1305047649631163">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3032518451536794" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="9661064376964219" type="Function">
+                    <param id="0" name="Name">&quot;GenerateMap&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
